@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Strings</title>
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --card-background: #f9f9f9;
+            --card-hover: rgba(255, 105, 180, 0.7); /* Pink hover effect */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #121212;
+                --text-color: #ffffff;
+                --card-background: #1e1e1e;
+                --card-hover: rgba(0, 191, 255, 0.7); /* Light blue hover effect */
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('/violin_hero.jpg');
+            background-position: center;
+            height: 100vh;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        header h2{
+            font-size: 1rem;
+            color: white;
+            font-weight: lighter;
+           
+        }
+
+        .violins-section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .violin-card {
+            position: relative;
+            margin: 10px;
+            width: 200px; /* Fixed width for cards */
+            height: 300px; /* Fixed height for cards */
+            overflow: hidden; /* Hides overflow */
+            border-radius: 10px;
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+        }
+
+        .violin-card:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .violin-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures images cover the entire card */
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--background-color); /* Semi-transparent background */
+            color: var(--text-color);
+            height: auto;
+            padding: 5px;
+            text-align: center; /* Centered text */
+        }
+
+        .contact-section {
+            height: min(50vh);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .scroll-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: var(--text-color);
+            color: var(--background-color);
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .card-content h2 , .card-content p  {
+            font-size: 1rem ;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>House of Strings</h1>
+    <h2>Discover a curated collection of handcrafted violins suitable for all levels, from beginners to professionals.</h2>
+</header>
+
+<section class="violins-section">
+    <div class="violin-card" onclick="scrollToContact()">
+        <img src="/classic.webp" alt="classic violin">
+        <div class="card-content">
+            <h2>Classic</h2>
+            <p>Price: 10,000</p>
+        </div>
+    </div>
+    <div class="violin-card" onclick="scrollToContact()">
+        <img src="/concertviolin.jpg" alt="concert violin">
+        <div class="card-content">
+            <h2>Concert</h2>
+            <p>Price: 8,000</p>
+        </div>
+    </div>
+    <div class="violin-card" onclick="scrollToContact()">
+        <img src="/professional-musical-wood-violin-500x500.webp" alt="proffessional wood volin">
+        <div class="card-content">
+            <h2>Professional</h2>
+            <p>Price: 7,500</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at contact@houseofstrings.com</p>
+    <p>Phone us at +1 (123) 456-7890</p>
+    <p>Visit us at 123 Violin St, Music City</p>
+    <a href="#" class="scroll-button">Back to Top</a>
+</section>
+
+<script>
+    function scrollToContact() {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
